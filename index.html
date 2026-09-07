@@ -6,13 +6,10 @@
     <title>
       Управление объектами недвижимости и комплексное развитие территорий
     </title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
     <link rel="stylesheet" href="styles/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+
     <script
       src="https://api-maps.yandex.ru/v3/?apikey=c7dfa86e-99d7-4ad5-9dce-ecabef46a19d&lang=ru_RU"
       onload="initMap()"
@@ -31,43 +28,125 @@
 
           <nav class="main-nav">
             <ul class="nav-list">
-              <li>
-                <a href="#">Архив <span class="arrow"></span></a>
-                <ul class="dropdown">
-                  <li><a href="#">Документы</a></li>
-                  <li><a href="#">Фото</a></li>
-                  <li><a href="#">Видео</a></li>
-                  <li><a href="#">Отзывы</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#"
+                  >Архив <span class="arrow"></span
+                ></a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item">
+                    <a class="dropdown-link" href="#">Документы</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="dropdown-link" href="#">Фото</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="dropdown-link" href="#">Видео</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a class="dropdown-link" href="#">Отзывы</a>
+                  </li>
                 </ul>
               </li>
-              <li><a href="#">Участникам</a></li>
-              <li><a href="#">Программа</a></li>
-              <li><a href="#">Контакты</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Участникам</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Программа</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Контакты</a>
+              </li>
             </ul>
           </nav>
 
           <div class="header-actions">
             <div class="lang-switch">
-              <a href="#" class="lang-link active">Rus</a>
               <a href="#" class="lang-link">Eng</a>
+              <a href="#" class="lang-link active">Rus</a>
             </div>
-            <a
-              href="#register"
-              class="btn btn-primary"
-              style="
-                padding: 12px 24px;
-                background: var(--accent-blue);
-                color: #fff;
-                border-radius: 8px;
-              "
-              >Регистрация</a
-            >
+            <a href="#register" class="btn btn-primary">Регистрация</a>
           </div>
         </div>
       </header>
+      <!-- ===== MOBILE HEADER ===== -->
+      <header class="mobile-header">
+        <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+        <div class="container mobile-header-container">
+          <button
+            class="hamburger-btn"
+            id="hamburgerBtn"
+            aria-label="Открыть меню"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+
+          <div class="mobile-header-actions">
+            <div class="lang-switch">
+              <a href="#" class="lang-link active">Rus</a>
+              <a href="#" class="lang-link">Eng</a>
+            </div>
+            <a href="#register" class="btn btn-primary">Регистрация</a>
+          </div>
+        </div>
+
+        <aside class="offcanvas-menu" id="offcanvasMenu">
+          <div class="offcanvas-body">
+            <div class="offcanvas-grid">
+              <!-- Левая колонка -->
+              <div class="offcanvas-col">
+                <div class="offcanvas-item has-submenu">
+                  <div class="offcanvas-link-row">
+                    <a class="offcanvas-link" href="#">Архив</a>
+                    <button
+                      class="submenu-toggle"
+                      aria-label="Развернуть подменю"
+                    >
+                      <img
+                        src="images/minus.svg"
+                        alt="Закрыть"
+                        class="toggle-icon icon-minus"
+                      />
+                      <img
+                        src="images/plus.svg"
+                        alt="Открыть"
+                        class="toggle-icon icon-plus"
+                      />
+                    </button>
+                  </div>
+                  <ul class="offcanvas-submenu open">
+                    <li><a class="offcanvas-sublink" href="#">Документы</a></li>
+                    <li><a class="offcanvas-sublink" href="#">Фото</a></li>
+                    <li><a class="offcanvas-sublink" href="#">Видео</a></li>
+                    <li><a class="offcanvas-sublink" href="#">Отзывы</a></li>
+                  </ul>
+                </div>
+
+                <div class="offcanvas-item">
+                  <a class="offcanvas-link" href="#">Участникам</a>
+                </div>
+              </div>
+
+              <!-- Правая колонка -->
+              <div class="offcanvas-col">
+                <div class="offcanvas-item">
+                  <a class="offcanvas-link" href="#">Программа</a>
+                </div>
+                <div class="offcanvas-item">
+                  <a class="offcanvas-link" href="#">Контакты</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </header>
+
+      <!-- ===== OFFCANVAS MENU ===== -->
     </section>
 
-    <section id="section-hero">
+    <section id="section-hero" class="section-margin">
       <div class="hero-wrapper">
         <div class="container">
           <div class="hero-content">
@@ -92,7 +171,7 @@
 
           <div class="hero-info-bar">
             <div class="info-card date-card">
-              <img src="images/3_2784.svg" alt="Calendar" />
+              <img src="images/Icon_calendar.svg" alt="Calendar" />
               <span>6-7 февраля 2026</span>
             </div>
             <div class="info-card location-card">
@@ -104,7 +183,7 @@
       </div>
     </section>
 
-    <section id="section-info">
+    <section id="section-info" class="section-margin">
       <div class="container">
         <div class="info-wrapper">
           <div class="tabs-header">
@@ -160,7 +239,7 @@
       </div>
     </section>
 
-    <section id="section-actions">
+    <section id="section-actions" class="section-margin">
       <div class="container">
         <div class="actions-wrapper">
           <div class="actions-row">
@@ -181,7 +260,7 @@
       </div>
     </section>
 
-    <section id="section-news">
+    <section id="section-news" class="section-margin">
       <div class="container">
         <div class="news-wrapper">
           <h2 class="section-title">Новости</h2>
@@ -257,7 +336,7 @@
       </div>
     </section>
 
-    <section id="section-organizers">
+    <!-- <section id="section-organizers" class="section-margin">
       <div class="container">
         <div class="organizers-wrapper">
           <div class="organizers-header">
@@ -297,9 +376,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="section-reviews">
+    <section id="section-reviews" class="section-margin">
       <div class="reviews-bg">
         <div class="container">
           <h2 class="reviews-title">Отзывы партнёров</h2>
@@ -369,7 +448,7 @@
       </div>
     </section>
 
-    <section id="section-contacts">
+    <!-- <section id="section-contacts" class="section-margin">
       <div class="contacts-wrapper">
         <div class="contacts-info-area">
           <div class="container">
@@ -426,7 +505,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <div id="map"></div>
     <section id="section-footer">
       <footer class="main-footer">
