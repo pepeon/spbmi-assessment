@@ -1,0 +1,508 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Управление объектами недвижимости и комплексное развитие территорий
+    </title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://api-maps.yandex.ru/v3/?apikey=c7dfa86e-99d7-4ad5-9dce-ecabef46a19d&lang=ru_RU"
+      onload="initMap()"
+    ></script>
+  </head>
+  <body>
+    <section id="section-header">
+      <header class="site-header">
+        <div class="container header-container">
+          <div class="logo">
+            <a href="#" class="logo-link">
+              <img src="images/1_332.svg" alt="Logo Icon" class="logo-icon" />
+              <img src="images/1_273.svg" alt="Logo Text" class="logo-text" />
+            </a>
+          </div>
+
+          <nav class="main-nav">
+            <ul class="nav-list">
+              <li>
+                <a href="#">Архив <span class="arrow"></span></a>
+                <ul class="dropdown">
+                  <li><a href="#">Документы</a></li>
+                  <li><a href="#">Фото</a></li>
+                  <li><a href="#">Видео</a></li>
+                  <li><a href="#">Отзывы</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Участникам</a></li>
+              <li><a href="#">Программа</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-actions">
+            <div class="lang-switch">
+              <a href="#" class="lang-link active">Rus</a>
+              <a href="#" class="lang-link">Eng</a>
+            </div>
+            <a
+              href="#register"
+              class="btn btn-primary"
+              style="
+                padding: 12px 24px;
+                background: var(--accent-blue);
+                color: #fff;
+                border-radius: 8px;
+              "
+              >Регистрация</a
+            >
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <section id="section-hero">
+      <div class="hero-wrapper">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text-box">
+              <h1>
+                Управление объектами недвижимости и комплексное развитие
+                территорий
+              </h1>
+              <p>
+                IV Всероссийская научно-практическая конференция, посвященная
+                ученому, заслуженному работнику геодезии и картографии,
+                профессору В.И. Павлову
+              </p>
+            </div>
+            <div class="hero-image-box">
+              <img
+                src="images/befe4be238f2bef280c594d2460c42a55b844b71.png"
+                alt="Hero Banner"
+              />
+            </div>
+          </div>
+
+          <div class="hero-info-bar">
+            <div class="info-card date-card">
+              <img src="images/3_2784.svg" alt="Calendar" />
+              <span>6-7 февраля 2026</span>
+            </div>
+            <div class="info-card location-card">
+              <img src="images/3_2786.svg" alt="Location" />
+              <span>Санкт-Петербург</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-info">
+      <div class="container">
+        <div class="info-wrapper">
+          <div class="tabs-header">
+            <div class="tab-item active">О конференции</div>
+            <div class="tab-item">Важные даты</div>
+            <div class="tab-item">Оргкомитет</div>
+          </div>
+
+          <div class="tabs-content">
+            <div class="content-card">
+              <h2>О конференции</h2>
+              <p>
+                Ежегодная научно-практическая конференция «Управление объектами
+                недвижимости и комплексное развитие территорий» проводится в
+                Санкт-Петербургском горном университете императрицы Екатерины
+                II, начиная с 2021 года, и является научным мероприятием,
+                направленным на раскрытие творческих способностей студентов и
+                аспирантов; обеспечение преемственности в подготовке кадров;
+                выявление достижений в научно-исследовательской работе молодых
+                учёных; обсуждение ведущих тем и направлений развития в области
+                землеустройства, кадастров, оценки недвижимости, геодезии и
+                градостроительства.
+              </p>
+            </div>
+
+            <div class="content-card">
+              <h2>Цель и задачи</h2>
+              <p>
+                Конференция проводится с целью обмена актуальной
+                научно-технической информацией по вопросам землеустройства,
+                кадастров, оценки и управления объектами недвижимости между
+                отечественными и зарубежными специалистами, преподавателями,
+                аспирантами и студентами.
+              </p>
+              <p>
+                <strong>Задачи конференции:</strong><br />
+                Обсуждение проблем и тенденций в области земельно-имущественных
+                отношений, управления земельными ресурсами и объектами
+                недвижимости, оценки недвижимости, а также геодезических работ
+                при осуществлении кадастровой деятельности.<br />
+                Развитие интеллектуального творчества студентов, привлечение их
+                к исследовательской, экспериментальной, инновационной
+                деятельности.<br />
+                Выявление талантливых и одарённых студентов, проявляющих интерес
+                и способности к самостоятельной научно-исследовательской
+                работе.<br />
+                Совершенствование навыков студентов и аспирантов обобщать,
+                оформлять и излагать результаты своих научных исследований.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-actions">
+      <div class="container">
+        <div class="actions-wrapper">
+          <div class="actions-row">
+            <a href="#" class="action-block">
+              <span>Программа</span>
+              <img src="images/1_98.svg" alt="Download Program" />
+            </a>
+            <a href="#" class="action-block">
+              <span>Требования к оформлению</span>
+              <img src="images/1_103.svg" alt="Download Requirements" />
+            </a>
+          </div>
+          <a href="#" class="action-block full-width">
+            <span>Регистрация</span>
+            <img src="images/1_108.svg" alt="Register" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-news">
+      <div class="container">
+        <div class="news-wrapper">
+          <h2 class="section-title">Новости</h2>
+
+          <div class="news-grid">
+            <article class="news-item">
+              <img
+                src="images/07b4cb3f85bbf15c49904b5f38c451c90d466c57.png"
+                alt="News Image 1"
+                class="news-img"
+              />
+              <div class="news-date">25.11.2023</div>
+              <h3 class="news-heading">
+                Студенты Горного университета встретились с потенциальным
+                работодателем
+              </h3>
+            </article>
+
+            <article class="news-item">
+              <img
+                src="images/f801811262a86541dce4658f59c0d143114a0129.png"
+                alt="News Image 2"
+                class="news-img"
+              />
+              <div class="news-date">25.11.2023</div>
+              <h3 class="news-heading">
+                Российско-иранские отношения в области научного сотрудничества
+                выходят на новый уровень
+              </h3>
+            </article>
+
+            <article class="news-item">
+              <img
+                src="images/a236dc45174a57a61de32a63ef785ad4fcc1dbdc.png"
+                alt="News Image 3"
+                class="news-img"
+              />
+              <div class="news-date">25.11.2023</div>
+              <h3 class="news-heading">
+                В Санкт-Петербургском горном университете состоялось заседание
+                Учёного Совета
+              </h3>
+            </article>
+
+            <article class="news-item">
+              <img
+                src="images/d7c0c63049634b3c9dcf2a9ebb42afeca97f476e.png"
+                alt="News Image 4"
+                class="news-img"
+              />
+              <div class="news-date">25.11.2023</div>
+              <h3 class="news-heading">
+                Студенты Санкт-Петербургского горного университета рассказали о
+                своих впечатлениях от нового общежития
+              </h3>
+            </article>
+          </div>
+
+          <div class="news-action">
+            <a
+              href="#"
+              class="btn btn-accent"
+              style="
+                padding: 16px 32px;
+                background: var(--accent-blue);
+                color: #fff;
+                border-radius: 8px;
+              "
+              >Все новости</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-organizers">
+      <div class="container">
+        <div class="organizers-wrapper">
+          <div class="organizers-header">
+            <h2 class="section-title" style="margin-bottom: 0">Организаторы</h2>
+            <div class="slider-nav">
+              <button class="slider-btn">
+                <img src="images/3_2728.svg" alt="Previous" />
+              </button>
+              <div class="slider-count">
+                <span>1</span> <span class="slash">/</span>
+                <span class="total">4</span>
+              </div>
+              <button class="slider-btn">
+                <img src="images/3_2731.svg" alt="Next" />
+              </button>
+            </div>
+          </div>
+
+          <div class="organizer-box">
+            <div class="org-logo-container">
+              <img
+                src="images/9c07b1c748afe6c52f4d629ddf7f3b9c8bd74147.png"
+                alt="Nedra Consortium Logo"
+              />
+            </div>
+            <div class="org-details">
+              <h3>Консорциум университетов «Недра»</h3>
+              <p>
+                Организация объединяет более 100 вузов, чьи направления обучения
+                связаны с подготовкой специалистов для минерально-сырьевого
+                комплекса России. Цель консорциума — рост уровня адаптации
+                высших учебных заведений к запросам рынка труда и дальнейшая
+                интеграция крупных профильных компаний, органов государственной
+                власти и университетов.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-reviews">
+      <div class="reviews-bg">
+        <div class="container">
+          <h2 class="reviews-title">Отзывы партнёров</h2>
+
+          <div class="review-panel">
+            <div class="review-visuals">
+              <img
+                src="images/a5e41ae0cf7fdcca768d3af1c739d4881680707f.png"
+                alt="Reviewer Photo"
+                class="reviewer-photo"
+              />
+              <img
+                src="images/1_217.svg"
+                alt="Pagination Dots"
+                class="review-dots"
+              />
+            </div>
+
+            <div class="review-text-content">
+              <div class="reviewer-info">
+                <h3>Василий Петров</h3>
+                <p class="reviewer-role">
+                  эксперт, участник конференции «Управление объектами
+                  недвижимости и комплексное развитие территорий» 2025
+                </p>
+              </div>
+
+              <div class="quote-box">
+                <img
+                  src="images/1_232.svg"
+                  alt="Quote Icon"
+                  class="quote-mark"
+                />
+                <p class="quote-text">
+                  Время проведённое в 2025м здесь очень запомнилось, не пожалел,
+                  что приехал сюда. Мне очень понравилось, как выступающие
+                  доносят информацию до слушателей — очень грамотно и чётко.
+                  Также понравилась мини доклады по различным зонам, где нам в
+                  подробностях объяснили все, что и как работает. Желаю каждому
+                  студенту побывать на данной конфе, где они узнают много новой
+                  информации, найдут себе друзей, получат хорошие знания и также
+                  увидят прекрасный город Санкт-Петербург.
+                </p>
+              </div>
+
+              <div class="reviewer-company">
+                Корпорация «Первопроходцы нефтегазовой отрасли»
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-action">
+            <a
+              href="#"
+              class="btn btn-secondary"
+              style="
+                padding: 16px 32px;
+                background: transparent;
+                border: 2px solid #fff;
+                color: #fff;
+                border-radius: 8px;
+              "
+              >Все отзывы</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-contacts">
+      <div class="contacts-wrapper">
+        <div class="contacts-info-area">
+          <div class="container">
+            <div class="contacts-header-row">
+              <h2 class="section-title" style="margin: 0">Контакты</h2>
+            </div>
+
+            <div class="contacts-grid-layout">
+              <div class="contact-card">
+                <h3>Место проведения</h3>
+                <h4>
+                  Санкт-Петербургский горный университет императрицы Екатерины
+                  II
+                </h4>
+
+                <div class="contact-detail">
+                  <img src="images/1_3655.svg" alt="Address Icon" />
+                  <p>
+                    Россия, 199106, г. Санкт-Петербург, Васильевский остров,
+                    21-я линия, д. 2, ауд. 1205 УЦ№1. Кафедра землеустройства и
+                    кадастров
+                  </p>
+                </div>
+
+                <div class="contact-detail">
+                  <img src="images/1_3659.svg" alt="Phone Icon" />
+                  <p>+7 (812) 322-29-23<br />+7 (812) 321-54-36</p>
+                </div>
+
+                <div class="contact-detail">
+                  <img src="images/1_3663.svg" alt="Email Icon" />
+                  <p class="highlight-email">
+                    dyachkova_is@pers.spmi.ru<br />Bykova_EN@pers.spmi.ru
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <h3>Организационный комитет</h3>
+
+                <div class="contact-detail">
+                  <img src="images/1_3671.svg" alt="Phone Icon" />
+                  <p>+7 (812) 328-84-96</p>
+                </div>
+
+                <div class="contact-detail">
+                  <img src="images/1_3675.svg" alt="Email Icon" />
+                  <p class="highlight-email">
+                    nirs@spmi.ru<br />land.spmi@yandex.ru
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="map"></div>
+    <section id="section-footer">
+      <footer class="main-footer">
+        <div class="container footer-layout">
+          <div class="footer-copy">
+            © 2026 Санкт-Петербургский горный университет
+          </div>
+          <div class="footer-nav">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Политика использования cookie-файлов</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script>
+      async function initMap() {
+        // 1. Безопасная проверка загрузки объекта ymaps3
+        if (typeof ymaps3 === "undefined") {
+          console.error("API Яндекс.Карт не загрузилось.");
+          return;
+        }
+
+        // 2. Ждем готовности API
+        await ymaps3.ready;
+
+        const {
+          YMap,
+          YMapDefaultSchemeLayer,
+          YMapDefaultFeaturesLayer,
+          YMapHTMLMarker,
+        } = ymaps3;
+
+        // 3. Инициализируем карту [Долгота, Широта]
+        const map = new YMap(document.getElementById("map"), {
+          location: {
+            center: [30.3351, 59.9343],
+            zoom: 12,
+          },
+        });
+
+        map.addChild(new YMapDefaultSchemeLayer());
+        map.addChild(new YMapDefaultFeaturesLayer());
+
+        // Функция создания кастомного HTML-маркера
+        function createAddressMarker(coords, address, borderColor) {
+          const markerElement = document.createElement("div");
+          markerElement.className = "address-marker";
+          markerElement.style.border = `2px solid ${borderColor}`;
+          markerElement.innerText = address;
+
+          return new YMapHTMLMarker({ coordinates: coords }, markerElement);
+        }
+
+        // Добавляем метки [Долгота, Широта]
+        const marker1 = createAddressMarker(
+          [30.3, 59.95],
+          "📍 Невский проспект, 1",
+          "#e74c3c",
+        );
+        const marker2 = createAddressMarker(
+          [30.35, 59.92],
+          "📍 Лиговский проспект, 10",
+          "#3498db",
+        );
+        const marker3 = createAddressMarker(
+          [30.32, 59.94],
+          "📍 Дворцовая площадь",
+          "#2ecc71",
+        );
+
+        map.addChild(marker1);
+        map.addChild(marker2);
+        map.addChild(marker3);
+      }
+    </script>
+  </body>
+</html>
