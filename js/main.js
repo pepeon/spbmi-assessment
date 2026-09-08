@@ -50,3 +50,47 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", closeMenu);
   });
 });
+
+// ===== ТАБЫ =====
+const tabItems = document.querySelectorAll(".tab-item");
+const tabPanes = document.querySelectorAll(".tab-pane");
+
+tabItems.forEach(function (tab) {
+  tab.addEventListener("click", function () {
+    const targetTab = this.getAttribute("data-tab");
+
+    // Убираем active со всех табов и контента
+    tabItems.forEach(function (t) {
+      t.classList.remove("active");
+    });
+    tabPanes.forEach(function (pane) {
+      pane.classList.remove("active");
+    });
+
+    // Добавляем active текущему табу и контенту
+    this.classList.add("active");
+    const targetPane = document.getElementById("tab-" + targetTab);
+    if (targetPane) {
+      targetPane.classList.add("active");
+    }
+  });
+});
+
+// ===== АККОРДЕОН (ОРГКОМИТЕТ) =====
+const accordionItems = document.querySelectorAll(".accordion-item");
+
+accordionItems.forEach(function (item) {
+  const header = item.querySelector(".accordion-header");
+
+  header.addEventListener("click", function () {
+    const isActive = item.classList.contains("active");
+
+    // Закрываем все аккордеоны (опционально, если нужно только один открытый)
+    // accordionItems.forEach(function (i) {
+    //   i.classList.remove('active');
+    // });
+
+    // Переключаем текущий
+    item.classList.toggle("active", !isActive);
+  });
+});

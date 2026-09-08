@@ -235,6 +235,23 @@ a {
 .location-card {
   justify-content: flex-end;
 }
+.task-list {
+  list-style: disc;
+  padding: 0;
+  margin: 16px 0 0;
+  padding-left: 20px;
+}
+
+.task-list li {
+  position: relative;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.task-list li:last-child {
+  margin-bottom: 0;
+}
 
 .info-wrapper {
   margin-top: 80px;
@@ -250,26 +267,213 @@ a {
   padding: 24px 48px;
   text-align: center;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
+  border-radius: 16px 16px 0 0;
 }
 .tab-item.active {
   background-color: var(--light-blue);
   color: var(--text-dark);
 }
-.tab-item:first-child {
-  border-radius: 16px 0 0 0;
-}
-.tab-item:last-child {
-  border-radius: 0 16px 0 0;
-}
 
 .tabs-content {
   background-color: var(--light-blue);
-  padding: 48px;
   display: flex;
   gap: 24px;
   border-radius: 0 0 16px 16px;
+}
+.tab-pane {
+  display: none;
+}
+.tab-committee,
+.tab-about {
+  margin: 48px;
+}
+.tab-about > * {
+  flex: 1;
+}
+.tab-about {
+  display: none;
+  flex-wrap: nowrap;
+  gap: 2px;
+  align-items: stretch;
+}
+
+.tab-dates {
+  margin: 48px auto;
+  padding: 0 24px;
+  max-width: 1008px;
+}
+.tab-pane.active {
+  width: 100%;
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+.tab-about.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== ВАЖНЫЕ ДАТЫ ===== */
+.dates-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.date-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.date-badge::before {
+  content: "";
+  width: 4px;
+  border-radius: 50%;
+  height: 4px;
+  display: block;
+  background-color: #000000;
+}
+.date-badge {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.date-text {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  color: var(--text-dark);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+/* ===== ОРГКОМИТЕТ ===== */
+.committee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.committee-title {
+  font-size: 20px;
+  color: #888;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.accordion-item {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.2s ease;
+}
+
+.accordion-header:hover {
+  background: rgba(26, 58, 107, 0.03);
+}
+
+.accordion-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+  color: var(--text-dark);
+}
+
+.accordion-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.3s ease;
+}
+.tabs-content .toggle-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-toggle {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  padding: 0 32px 0 32px;
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+  padding: 0 32px 32px 32px;
+}
+
+.committee-member:last-child {
+  border-bottom: none;
+}
+
+.committee-member strong {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.committee-member {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--text-dark);
+}
+
+.committee-member p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
 }
 .content-card {
   flex: 1;
@@ -280,12 +484,24 @@ a {
 .content-card h2 {
   margin-top: 0;
   margin-bottom: 24px;
+  font-family: var(--font-family);
+  font-weight: 600;
   font-size: 24px;
+  line-height: 140%;
   color: var(--text-dark);
 }
+
+.content-card {
+}
+.content-card strong {
+  font-weight: 700;
+}
 .content-card p {
-  line-height: 1.6;
   margin-bottom: 16px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
   color: var(--text-dark);
 }
 .content-card p:last-child {
@@ -611,6 +827,33 @@ a {
   }
 }
 @media (max-width: 1024px) {
+  .date-item {
+    padding: 32px 24px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .tab-item {
+    padding: 24px;
+  }
+  .accordion-item.active .accordion-content {
+    padding: 0 24px 32px 24px;
+  }
+  .accordion-content {
+    padding: 0 24px 0px 24px;
+  }
+  .accordion-header {
+    padding: 32px 24px;
+  }
+  .tab-dates {
+    margin: 24px 0;
+  }
+  .tab-committee,
+  .tab-about {
+    margin: 24px;
+  }
+  .content-card {
+    padding: 32px 24px;
+  }
   .section-margin {
     margin-bottom: 120px;
   }
@@ -856,8 +1099,6 @@ a {
     margin-top: -8px;
     display: none;
   }
-  .offcanvas-item.has-submenu .offcanvas-link {
-  }
 
   .offcanvas-submenu.open {
     display: block;
@@ -878,6 +1119,20 @@ a {
 }
 
 @media (max-width: 770px) {
+  .date-text {
+    max-width: 285px;
+    margin: 0;
+  }
+  .tab-about > * {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .date-item {
+    justify-content: space-between;
+  }
+  .tab-about {
+    flex-wrap: wrap;
+  }
   .info-card {
     padding: 24px;
     font-size: 16px;
@@ -896,6 +1151,10 @@ a {
   }
 }
 @media (max-width: 576px) {
+  .tab-item {
+    font-size: 12px;
+    padding: 16px 12px;
+  }
   .section-margin {
     margin-bottom: 100px;
   }
@@ -921,6 +1180,37 @@ a {
   }
 }
 @media (max-width: 475px) {
+  .date-item {
+    padding: 24px 16px;
+    gap: 4px;
+  }
+  .accordion-item.active .accordion-content {
+    padding: 0 16px 24px 16px;
+  }
+  .accordion-content {
+    padding: 0 16px 0px 16px;
+  }
+  .accordion-header {
+    padding: 24px 16px;
+  }
+  .accordion-title {
+    font-size: 16px;
+  }
+  .content-card h2 {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  .content-card {
+    padding: 24px 16px;
+  }
+  .tab-dates {
+    padding: 0 16px;
+    margin: 16px 0;
+  }
+  .tab-committee,
+  .tab-about {
+    margin: 16px;
+  }
   .hero-image-box {
     min-height: 184px;
   }
