@@ -3,6 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const offcanvasMenu = document.getElementById("offcanvasMenu");
   const offcanvasOverlay = document.getElementById("offcanvasOverlay");
   const mobileHeader = document.querySelector(".mobile-header");
+  const sliderElement = document.getElementById("organizerSlider");
+  const prevBtn = document.getElementById("sliderPrev");
+  const nextBtn = document.getElementById("sliderNext");
+  const currentSpan = document.getElementById("sliderCurrent");
+  const totalSpan = document.getElementById("sliderTotal");
+  const sliderNavHeader = document.getElementById("orgSliderNav");
+  const sliderNavBottom = document.getElementById("sliderNavBottom");
+  const reviewsSliderElement = document.getElementById("reviewsSlider");
+  const dotsContainer = document.getElementById("reviewDots");
   let isOpen = false;
 
   function toggleMenu() {
@@ -49,48 +58,161 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".offcanvas-link").forEach(function (link) {
     link.addEventListener("click", closeMenu);
   });
-});
+  // ===== ТАБЫ =====
+  const tabItems = document.querySelectorAll(".tab-item");
+  const tabPanes = document.querySelectorAll(".tab-pane");
 
-// ===== ТАБЫ =====
-const tabItems = document.querySelectorAll(".tab-item");
-const tabPanes = document.querySelectorAll(".tab-pane");
+  tabItems.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      const targetTab = this.getAttribute("data-tab");
 
-tabItems.forEach(function (tab) {
-  tab.addEventListener("click", function () {
-    const targetTab = this.getAttribute("data-tab");
+      // Убираем active со всех табов и контента
+      tabItems.forEach(function (t) {
+        t.classList.remove("active");
+      });
+      tabPanes.forEach(function (pane) {
+        pane.classList.remove("active");
+      });
 
-    // Убираем active со всех табов и контента
-    tabItems.forEach(function (t) {
-      t.classList.remove("active");
+      // Добавляем active текущему табу и контенту
+      this.classList.add("active");
+      const targetPane = document.getElementById("tab-" + targetTab);
+      if (targetPane) {
+        targetPane.classList.add("active");
+      }
     });
-    tabPanes.forEach(function (pane) {
-      pane.classList.remove("active");
-    });
+  });
 
-    // Добавляем active текущему табу и контенту
-    this.classList.add("active");
-    const targetPane = document.getElementById("tab-" + targetTab);
-    if (targetPane) {
-      targetPane.classList.add("active");
+  // ===== АККОРДЕОН (ОРГКОМИТЕТ) =====
+  const accordionItems = document.querySelectorAll(".accordion-item");
+
+  accordionItems.forEach(function (item) {
+    const header = item.querySelector(".accordion-header");
+
+    header.addEventListener("click", function () {
+      const isActive = item.classList.contains("active");
+
+      // Закрываем все аккордеоны (опционально, если нужно только один открытый)
+      // accordionItems.forEach(function (i) {
+      //   i.classList.remove('active');
+      // });
+
+      // Переключаем текущий
+      item.classList.toggle("active", !isActive);
+    });
+  });
+  const slider = new KeenSlider(sliderElement, {
+    loop: false,
+    slides: {
+      perView: 1,
+      spacing: 20,
+    },
+
+    created(s) {
+      // Устанавливаем общее количество слайдов
+      totalSpan.textContent = s.slides.length;
+      updateButtons(s);
+    },
+    slideChanged(s) {
+      // Обновляем счётчик
+      currentSpan.textContent = s.track.details.rel + 1;
+      updateButtons(s);
+    },
+  });
+
+  // Навигация
+  prevBtn.addEventListener("click", function () {
+    slider.prev();
+  });
+
+  nextBtn.addEventListener("click", function () {
+    slider.next();
+  });
+
+  // Обновление состояния кнопок
+  function updateButtons(s) {
+    const idx = s.track.details.rel;
+    const maxIdx = s.slides.length - 1;
+
+    prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx === maxIdx;
+  }
+
+  const mediaQuery = window.matchMedia("(max-width: 576px)");
+
+  function handleScreenChange(e) {
+    if (e.matches) {
+      sliderNavBottom.appendChild(prevBtn);
+      sliderNavBottom.appendChild(currentSpan.parentElement);
+      sliderNavBottom.appendChild(nextBtn);
+    } else {
+      sliderNavHeader.appendChild(prevBtn);
+      sliderNavHeader.appendChild(currentSpan.parentElement);
+      sliderNavHeader.appendChild(nextBtn);
     }
-  });
-});
+  }
 
-// ===== АККОРДЕОН (ОРГКОМИТЕТ) =====
-const accordionItems = document.querySelectorAll(".accordion-item");
+  mediaQuery.addEventListener("change", handleScreenChange);
 
-accordionItems.forEach(function (item) {
-  const header = item.querySelector(".accordion-header");
+  // Вызываем сразу при загрузке
+  handleScreenChange(mediaQuery);
 
-  header.addEventListener("click", function () {
-    const isActive = item.classList.contains("active");
+  if (reviewsSliderElement) {
+    const reviewsSlider = new KeenSlider(reviewsSliderElement, {
+      loop: true,
+      slides: {
+        perView: 1,
+        spacing: 0,
+      },
+      created(s) {
+        const totalSlides = s.slides.length;
 
-    // Закрываем все аккордеоны (опционально, если нужно только один открытый)
-    // accordionItems.forEach(function (i) {
-    //   i.classList.remove('active');
-    // });
+        // Генерируем точки во всех слайдах
+        const allSlideDotsContainers =
+          document.querySelectorAll(".review-dots");
+        allSlideDotsContainers.forEach(function (container) {
+          createDots(container, totalSlides);
+        });
 
-    // Переключаем текущий
-    item.classList.toggle("active", !isActive);
-  });
+        // Обновляем активную точку на первом слайде
+        updateActiveDots(s.track.details.rel);
+      },
+      slideChanged(s) {
+        // Обновляем активную точку при смене слайда
+        updateActiveDots(s.track.details.rel);
+      },
+    });
+
+    // Функция создания точек в контейнере
+    function createDots(container, totalSlides) {
+      container.innerHTML = "";
+
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("button");
+        dot.classList.add("review-dot");
+        dot.setAttribute("data-index", i);
+        dot.setAttribute("aria-label", `Слайд ${i + 1}`);
+
+        dot.addEventListener("click", function () {
+          const index = parseInt(this.getAttribute("data-index"));
+          reviewsSlider.moveToIdx(index);
+        });
+
+        container.appendChild(dot);
+      }
+    }
+
+    // Функция обновления активной точки во всех контейнерах
+    function updateActiveDots(activeIndex) {
+      const allDots = document.querySelectorAll(".review-dot");
+      allDots.forEach(function (dot) {
+        const dotIndex = parseInt(dot.getAttribute("data-index"));
+        if (dotIndex === activeIndex) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    }
+  }
 });

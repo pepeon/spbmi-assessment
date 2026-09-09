@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/fonts.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="/styles/keen-slider/keen-slider.min.css" />
+    <script src="/js/keen-slider/keen-slider.min.js"></script>
 
     <script
       src="https://api-maps.yandex.ru/v3/?apikey=c7dfa86e-99d7-4ad5-9dce-ecabef46a19d&lang=ru_RU"
@@ -324,17 +326,15 @@
     <section id="section-actions" class="section-margin">
       <div class="container">
         <div class="actions-wrapper">
-          <div class="actions-row">
-            <a href="#" class="action-block">
-              <span>Программа</span>
-              <img src="images/1_98.svg" alt="Download Program" />
-            </a>
-            <a href="#" class="action-block">
-              <span>Требования к оформлению</span>
-              <img src="images/1_103.svg" alt="Download Requirements" />
-            </a>
-          </div>
-          <a href="#" class="action-block full-width">
+          <a href="#" class="action-block">
+            <span>Программа</span>
+            <img src="images/1_98.svg" alt="Download Program" />
+          </a>
+          <a href="#" class="action-block">
+            <span>Требования к оформлению</span>
+            <img src="images/1_103.svg" alt="Download Requirements" />
+          </a>
+          <a href="#" class="action-block action-block--full-width">
             <span>Регистрация</span>
             <img src="images/1_108.svg" alt="Register" />
           </a>
@@ -347,184 +347,560 @@
         <div class="news-wrapper">
           <h2 class="section-title">Новости</h2>
 
-          <div class="news-grid">
+          <div class="news-container">
             <article class="news-item">
-              <img
-                src="images/07b4cb3f85bbf15c49904b5f38c451c90d466c57.png"
-                alt="News Image 1"
-                class="news-img"
-              />
+              <a href="#" class="news-link">
+                <img
+                  src="images/07b4cb3f85bbf15c49904b5f38c451c90d466c57.png"
+                  alt="News Image 1"
+                  class="news-img"
+                />
+              </a>
+
               <div class="news-date">25.11.2023</div>
-              <h3 class="news-heading">
-                Студенты Горного университета встретились с потенциальным
-                работодателем
-              </h3>
+              <a href="#" class="news-link"
+                ><h3 class="news-heading">
+                  Студенты Горного университета встретились с потенциальным
+                  работодателем
+                </h3></a
+              >
             </article>
 
             <article class="news-item">
-              <img
-                src="images/f801811262a86541dce4658f59c0d143114a0129.png"
-                alt="News Image 2"
-                class="news-img"
-              />
+              <a href="#" class="news-link">
+                <img
+                  src="images/f801811262a86541dce4658f59c0d143114a0129.png"
+                  alt="News Image 2"
+                  class="news-img"
+              /></a>
+
               <div class="news-date">25.11.2023</div>
-              <h3 class="news-heading">
-                Российско-иранские отношения в области научного сотрудничества
-                выходят на новый уровень
-              </h3>
+              <a href="#" class="news-link"
+                ><h3 class="news-heading">
+                  Российско-иранские отношения в области научного сотрудничества
+                  выходят на новый уровень
+                </h3></a
+              >
             </article>
 
             <article class="news-item">
-              <img
-                src="images/a236dc45174a57a61de32a63ef785ad4fcc1dbdc.png"
-                alt="News Image 3"
-                class="news-img"
-              />
+              <a href="#" class="news-link">
+                <img
+                  src="images/a236dc45174a57a61de32a63ef785ad4fcc1dbdc.png"
+                  alt="News Image 3"
+                  class="news-img"
+              /></a>
+
               <div class="news-date">25.11.2023</div>
-              <h3 class="news-heading">
-                В Санкт-Петербургском горном университете состоялось заседание
-                Учёного Совета
-              </h3>
+              <a href="#" class="news-link"
+                ><h3 class="news-heading">
+                  В Санкт-Петербургском горном университете состоялось заседание
+                  Учёного Совета
+                </h3></a
+              >
             </article>
 
             <article class="news-item">
-              <img
-                src="images/d7c0c63049634b3c9dcf2a9ebb42afeca97f476e.png"
-                alt="News Image 4"
-                class="news-img"
-              />
+              <a href="#" class="news-link"
+                ><img
+                  src="images/d7c0c63049634b3c9dcf2a9ebb42afeca97f476e.png"
+                  alt="News Image 4"
+                  class="news-img"
+              /></a>
+
               <div class="news-date">25.11.2023</div>
-              <h3 class="news-heading">
-                Студенты Санкт-Петербургского горного университета рассказали о
-                своих впечатлениях от нового общежития
-              </h3>
+              <a href="#" class="news-link">
+                <h3 class="news-heading">
+                  Студенты Санкт-Петербургского горного университета рассказали
+                  о своих впечатлениях от нового общежития
+                </h3></a
+              >
             </article>
           </div>
 
           <div class="news-action">
-            <a
-              href="#"
-              class="btn btn-accent"
-              style="
-                padding: 16px 32px;
-                background: var(--accent-blue);
-                color: #fff;
-                border-radius: 8px;
-              "
-              >Все новости</a
-            >
+            <a href="#" class="btn btn-primary">Все новости</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- <section id="section-organizers" class="section-margin">
+    <section id="section-organizers" class="section-margin">
       <div class="container">
         <div class="organizers-wrapper">
           <div class="organizers-header">
-            <h2 class="section-title" style="margin-bottom: 0">Организаторы</h2>
-            <div class="slider-nav">
-              <button class="slider-btn">
+            <h2 class="section-title">Организаторы</h2>
+            <div class="slider-nav" id="orgSliderNav">
+              <button class="slider-btn slider-btn-prev" id="sliderPrev">
                 <img src="images/3_2728.svg" alt="Previous" />
               </button>
               <div class="slider-count">
-                <span>1</span> <span class="slash">/</span>
-                <span class="total">4</span>
+                <span id="sliderCurrent">1</span>
+                <span class="slash">/</span>
+                <span class="total" id="sliderTotal">4</span>
               </div>
-              <button class="slider-btn">
-                <img src="images/3_2731.svg" alt="Next" />
+              <button class="slider-btn slider-btn-next" id="sliderNext">
+                <img src="images/3_2728.svg" alt="Next" />
               </button>
             </div>
           </div>
 
-          <div class="organizer-box">
-            <div class="org-logo-container">
-              <img
-                src="images/9c07b1c748afe6c52f4d629ddf7f3b9c8bd74147.png"
-                alt="Nedra Consortium Logo"
-              />
+          <div class="keen-slider" id="organizerSlider">
+            <!-- Слайд 1 -->
+            <div class="keen-slider__slide organizer-box">
+              <div class="org-logo-container">
+                <img
+                  src="images/9c07b1c748afe6c52f4d629ddf7f3b9c8bd74147.png"
+                  alt="Nedra Consortium Logo"
+                />
+              </div>
+              <div class="org-details">
+                <h3>Консорциум университетов «Недра»</h3>
+                <p>
+                  Организация объединяет более 100 вузов, чьи направления
+                  обучения связаны с подготовкой специалистов для
+                  минерально-сырьевого комплекса России. Цель консорциума — рост
+                  уровня адаптации высших учебных заведений к запросам рынка
+                  труда и дальнейшая интеграция крупных профильных компаний,
+                  органов государственной власти и университетов.
+                </p>
+              </div>
             </div>
-            <div class="org-details">
-              <h3>Консорциум университетов «Недра»</h3>
-              <p>
-                Организация объединяет более 100 вузов, чьи направления обучения
-                связаны с подготовкой специалистов для минерально-сырьевого
-                комплекса России. Цель консорциума — рост уровня адаптации
-                высших учебных заведений к запросам рынка труда и дальнейшая
-                интеграция крупных профильных компаний, органов государственной
-                власти и университетов.
-              </p>
+
+            <!-- Слайд 2 -->
+            <div class="keen-slider__slide organizer-box">
+              <div class="org-logo-container">
+                <img
+                  src="images/9c07b1c748afe6c52f4d629ddf7f3b9c8bd74147.png"
+                  alt="Logo"
+                />
+              </div>
+              <div class="org-details">
+                <h3>Санкт-Петербургский горный университет</h3>
+                <p>
+                  Старейшее высшее техническое учебное заведение России,
+                  основанное в 1773 году. Университет осуществляет подготовку
+                  специалистов в области горного дела, геологии, нефтегазового
+                  дела, металлургии и других направлений минерально-сырьевого
+                  комплекса.
+                </p>
+              </div>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="keen-slider__slide organizer-box">
+              <div class="org-logo-container">
+                <img
+                  src="images/9c07b1c748afe6c52f4d629ddf7f3b9c8bd74147.png"
+                  alt="Logo"
+                />
+              </div>
+              <div class="org-details">
+                <h3>Российское общество оценщиков</h3>
+                <p>
+                  Некоммерческая организация, объединяющая профессиональных
+                  оценщиков и специалистов в области оценки недвижимости.
+                  Общество способствует развитию оценочной деятельности,
+                  повышению квалификации специалистов и формированию единых
+                  стандартов оценки в России.
+                </p>
+              </div>
+            </div>
+
+            <!-- Слайд 4 -->
+            <div class="keen-slider__slide organizer-box">
+              <div class="org-logo-container">
+                <img
+                  src="images/9c07b1c748afe6c52f4d629ddf7f3b9c8bd74147.png"
+                  alt="Logo"
+                />
+              </div>
+              <div class="org-details">
+                <h3>Ассоциация «СРО «Объединение кадастровых инженеров»</h3>
+                <p>
+                  Саморегулируемая организация, объединяющая кадастровых
+                  инженеров для обеспечения качества кадастровых работ.
+                  Ассоциация занимается разработкой методических рекомендаций,
+                  контролем деятельности членов и повышением профессионального
+                  уровня специалистов.
+                </p>
+              </div>
             </div>
           </div>
+          <div class="slider-nav-bottom" id="sliderNavBottom"></div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <section id="section-reviews" class="section-margin">
-      <div class="reviews-bg">
-        <div class="container">
+      <div class="container">
+        <div class="reviews-bg">
           <h2 class="reviews-title">Отзывы партнёров</h2>
 
-          <div class="review-panel">
-            <div class="review-visuals">
-              <img
-                src="images/a5e41ae0cf7fdcca768d3af1c739d4881680707f.png"
-                alt="Reviewer Photo"
-                class="reviewer-photo"
-              />
-              <img
-                src="images/1_217.svg"
-                alt="Pagination Dots"
-                class="review-dots"
-              />
+          <div class="keen-slider" id="reviewsSlider">
+            <!-- Слайд 1 -->
+            <div class="keen-slider__slide review-panel">
+              <div class="review-visuals">
+                <img
+                  src="images/review.png"
+                  alt="Reviewer Photo"
+                  class="reviewer-photo"
+                />
+                <div class="review-dots"></div>
+              </div>
+
+              <div class="review-text-content">
+                <div class="reviewer-info">
+                  <h3>Василий Петров</h3>
+                  <p class="reviewer-role">
+                    эксперт, участник конференции «Управление объектами
+                    недвижимости и комплексное развитие территорий» 2025
+                  </p>
+                </div>
+
+                <div class="quote-box">
+                  <img
+                    src="images/1_232.svg"
+                    alt="Quote Icon"
+                    class="quote-mark"
+                  />
+                  <p class="quote-text">
+                    Время проведённое в 2025м здесь очень запомнилось,
+                    не пожалел, что приехал сюда. Мне очень понравилось,
+                    как выступающие доносят информацию до слушателей — очень
+                    грамотно и чётко. Также понравилась мини доклады
+                    по различным зонам, где нам в подробностях объяснили все,
+                    что и как работает. Желаю каждому студенту побывать
+                    на данной конфе, где они узнают много новой информации,
+                    найдут себе друзей, получат хорошие знания и также увидят
+                    прекрасный город Санкт-&nbsp;Петербург
+                  </p>
+                </div>
+
+                <div class="reviewer-company">
+                  Корпорация «Первопроходцы нефтегазовой отрасли»
+                </div>
+              </div>
             </div>
 
-            <div class="review-text-content">
-              <div class="reviewer-info">
-                <h3>Василий Петров</h3>
-                <p class="reviewer-role">
-                  эксперт, участник конференции «Управление объектами
-                  недвижимости и комплексное развитие территорий» 2025
-                </p>
-              </div>
-
-              <div class="quote-box">
+            <!-- Слайд 2 -->
+            <div class="keen-slider__slide review-panel">
+              <div class="review-visuals">
                 <img
-                  src="images/1_232.svg"
-                  alt="Quote Icon"
-                  class="quote-mark"
+                  src="images/review.png"
+                  alt="Reviewer Photo"
+                  class="reviewer-photo"
                 />
-                <p class="quote-text">
-                  Время проведённое в 2025м здесь очень запомнилось, не пожалел,
-                  что приехал сюда. Мне очень понравилось, как выступающие
-                  доносят информацию до слушателей — очень грамотно и чётко.
-                  Также понравилась мини доклады по различным зонам, где нам в
-                  подробностях объяснили все, что и как работает. Желаю каждому
-                  студенту побывать на данной конфе, где они узнают много новой
-                  информации, найдут себе друзей, получат хорошие знания и также
-                  увидят прекрасный город Санкт-Петербург.
-                </p>
+                <div class="review-dots"></div>
               </div>
 
-              <div class="reviewer-company">
-                Корпорация «Первопроходцы нефтегазовой отрасли»
+              <div class="review-text-content">
+                <div class="reviewer-info">
+                  <h3>Василий Петров</h3>
+                  <p class="reviewer-role">
+                    эксперт, участник конференции «Управление объектами
+                    недвижимости и комплексное развитие территорий» 2025
+                  </p>
+                </div>
+
+                <div class="quote-box">
+                  <img
+                    src="images/1_232.svg"
+                    alt="Quote Icon"
+                    class="quote-mark"
+                  />
+                  <p class="quote-text">
+                    Время проведённое в 2025м здесь очень запомнилось,
+                    <br />не пожалел, что приехал сюда. Мне очень понравилось,
+                    как выступающие доносят информацию до слушателей — очень
+                    грамотно и чётко. Также понравилась мини доклады по
+                    различным зонам, где нам в подробностях объяснили все, что и
+                    как работает. Желаю каждому студенту побывать на данной
+                    конфе, где они узнают много новой информации, найдут себе
+                    друзей, получат хорошие знания и также увидят прекрасный
+                    город Санкт-&nbsp;Петербург
+                  </p>
+                </div>
+
+                <div class="reviewer-company">
+                  Корпорация «Первопроходцы нефтегазовой отрасли»
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="keen-slider__slide review-panel">
+              <div class="review-visuals">
+                <img
+                  src="images/review.png"
+                  alt="Reviewer Photo"
+                  class="reviewer-photo"
+                />
+                <div class="review-dots"></div>
+              </div>
+
+              <div class="review-text-content">
+                <div class="reviewer-info">
+                  <h3>Василий Петров</h3>
+                  <p class="reviewer-role">
+                    эксперт, участник конференции «Управление объектами
+                    недвижимости и комплексное развитие территорий» 2025
+                  </p>
+                </div>
+
+                <div class="quote-box">
+                  <img
+                    src="images/1_232.svg"
+                    alt="Quote Icon"
+                    class="quote-mark"
+                  />
+                  <p class="quote-text">
+                    Время проведённое в 2025м здесь очень запомнилось,
+                    <br />не пожалел, что приехал сюда. Мне очень понравилось,
+                    как выступающие доносят информацию до слушателей — очень
+                    грамотно и чётко. Также понравилась мини доклады по
+                    различным зонам, где нам в подробностях объяснили все, что и
+                    как работает. Желаю каждому студенту побывать на данной
+                    конфе, где они узнают много новой информации, найдут себе
+                    друзей, получат хорошие знания и также увидят прекрасный
+                    город Санкт-&nbsp;Петербург
+                  </p>
+                </div>
+
+                <div class="reviewer-company">
+                  Корпорация «Первопроходцы нефтегазовой отрасли»
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 4 -->
+            <div class="keen-slider__slide review-panel">
+              <div class="review-visuals">
+                <img
+                  src="images/review.png"
+                  alt="Reviewer Photo"
+                  class="reviewer-photo"
+                />
+                <div class="review-dots"></div>
+              </div>
+
+              <div class="review-text-content">
+                <div class="reviewer-info">
+                  <h3>Василий Петров</h3>
+                  <p class="reviewer-role">
+                    эксперт, участник конференции «Управление объектами
+                    недвижимости и комплексное развитие территорий» 2025
+                  </p>
+                </div>
+
+                <div class="quote-box">
+                  <img
+                    src="images/1_232.svg"
+                    alt="Quote Icon"
+                    class="quote-mark"
+                  />
+                  <p class="quote-text">
+                    Время проведённое в 2025м здесь очень запомнилось,
+                    <br />не пожалел, что приехал сюда. Мне очень понравилось,
+                    как выступающие доносят информацию до слушателей — очень
+                    грамотно и чётко. Также понравилась мини доклады по
+                    различным зонам, где нам в подробностях объяснили все, что и
+                    как работает. Желаю каждому студенту побывать на данной
+                    конфе, где они узнают много новой информации, найдут себе
+                    друзей, получат хорошие знания и также увидят прекрасный
+                    город Санкт-&nbsp;Петербург
+                  </p>
+                </div>
+
+                <div class="reviewer-company">
+                  Корпорация «Первопроходцы нефтегазовой отрасли»
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 5 -->
+            <div class="keen-slider__slide review-panel">
+              <div class="review-visuals">
+                <img
+                  src="images/review.png"
+                  alt="Reviewer Photo"
+                  class="reviewer-photo"
+                />
+                <div class="review-dots"></div>
+              </div>
+
+              <div class="review-text-content">
+                <div class="reviewer-info">
+                  <h3>Василий Петров</h3>
+                  <p class="reviewer-role">
+                    эксперт, участник конференции «Управление объектами
+                    недвижимости и комплексное развитие территорий» 2025
+                  </p>
+                </div>
+
+                <div class="quote-box">
+                  <img
+                    src="images/1_232.svg"
+                    alt="Quote Icon"
+                    class="quote-mark"
+                  />
+                  <p class="quote-text">
+                    Время проведённое в 2025м здесь очень запомнилось,
+                    <br />не пожалел, что приехал сюда. Мне очень понравилось,
+                    как выступающие доносят информацию до слушателей — очень
+                    грамотно и чётко. Также понравилась мини доклады по
+                    различным зонам, где нам в подробностях объяснили все, что и
+                    как работает. Желаю каждому студенту побывать на данной
+                    конфе, где они узнают много новой информации, найдут себе
+                    друзей, получат хорошие знания и также увидят прекрасный
+                    город Санкт-&nbsp;Петербург
+                  </p>
+                </div>
+
+                <div class="reviewer-company">
+                  Корпорация «Первопроходцы нефтегазовой отрасли»
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 6 -->
+            <div class="keen-slider__slide review-panel">
+              <div class="review-visuals">
+                <img
+                  src="images/review.png"
+                  alt="Reviewer Photo"
+                  class="reviewer-photo"
+                />
+                <div class="review-dots"></div>
+              </div>
+
+              <div class="review-text-content">
+                <div class="reviewer-info">
+                  <h3>Василий Петров</h3>
+                  <p class="reviewer-role">
+                    эксперт, участник конференции «Управление объектами
+                    недвижимости и комплексное развитие территорий» 2025
+                  </p>
+                </div>
+
+                <div class="quote-box">
+                  <img
+                    src="images/1_232.svg"
+                    alt="Quote Icon"
+                    class="quote-mark"
+                  />
+                  <p class="quote-text">
+                    Время проведённое в 2025м здесь очень запомнилось,
+                    <br />не пожалел, что приехал сюда. Мне очень понравилось,
+                    как выступающие доносят информацию до слушателей — очень
+                    грамотно и чётко. Также понравилась мини доклады по
+                    различным зонам, где нам в подробностях объяснили все, что и
+                    как работает. Желаю каждому студенту побывать на данной
+                    конфе, где они узнают много новой информации, найдут себе
+                    друзей, получат хорошие знания и также увидят прекрасный
+                    город Санкт-&nbsp;Петербург
+                  </p>
+                </div>
+
+                <div class="reviewer-company">
+                  Корпорация «Первопроходцы нефтегазовой отрасли»
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 7 -->
+            <div class="keen-slider__slide review-panel">
+              <div class="review-visuals">
+                <img
+                  src="images/review.png"
+                  alt="Reviewer Photo"
+                  class="reviewer-photo"
+                />
+                <div class="review-dots"></div>
+              </div>
+
+              <div class="review-text-content">
+                <div class="reviewer-info">
+                  <h3>Василий Петров</h3>
+                  <p class="reviewer-role">
+                    эксперт, участник конференции «Управление объектами
+                    недвижимости и комплексное развитие территорий» 2025
+                  </p>
+                </div>
+
+                <div class="quote-box">
+                  <img
+                    src="images/1_232.svg"
+                    alt="Quote Icon"
+                    class="quote-mark"
+                  />
+                  <p class="quote-text">
+                    Время проведённое в 2025м здесь очень запомнилось,
+                    не пожалел, что приехал сюда. Мне очень понравилось,
+                    как выступающие доносят информацию до слушателей — очень
+                    грамотно и чётко. Также понравилась мини доклады
+                    по различным зонам, где нам в подробностях объяснили все,
+                    что и как работает. Желаю каждому студенту побывать
+                    на данной конфе, где они узнают много новой информации,
+                    найдут себе друзей, получат хорошие знания и также увидят
+                    прекрасный город Санкт-&nbsp;Петербург
+                  </p>
+                </div>
+
+                <div class="reviewer-company">
+                  Корпорация «Первопроходцы нефтегазовой отрасли»
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 8 -->
+            <div class="keen-slider__slide review-panel">
+              <div class="review-visuals">
+                <img
+                  src="images/review.png"
+                  alt="Reviewer Photo"
+                  class="reviewer-photo"
+                />
+                <div class="review-dots"></div>
+              </div>
+
+              <div class="review-text-content">
+                <div class="reviewer-info">
+                  <h3>Василий Петров</h3>
+                  <p class="reviewer-role">
+                    эксперт, участник конференции «Управление объектами
+                    недвижимости и комплексное развитие территорий» 2025
+                  </p>
+                </div>
+
+                <div class="quote-box">
+                  <img
+                    src="images/1_232.svg"
+                    alt="Quote Icon"
+                    class="quote-mark"
+                  />
+                  <p class="quote-text">
+                    Время проведённое в 2025м здесь очень запомнилось,
+                    <br />не пожалел, что приехал сюда. Мне очень понравилось,
+                    как выступающие доносят информацию до слушателей — очень
+                    грамотно и чётко. Также понравилась мини доклады по
+                    различным зонам, где нам в подробностях объяснили все, что и
+                    как работает. Желаю каждому студенту побывать на данной
+                    конфе, где они узнают много новой информации, найдут себе
+                    друзей, получат хорошие знания и также увидят прекрасный
+                    город Санкт-&nbsp;Петербург
+                  </p>
+                </div>
+
+                <div class="reviewer-company">
+                  Корпорация «Первопроходцы нефтегазовой отрасли»
+                </div>
               </div>
             </div>
           </div>
 
           <div class="reviews-action">
-            <a
-              href="#"
-              class="btn btn-secondary"
-              style="
-                padding: 16px 32px;
-                background: transparent;
-                border: 2px solid #fff;
-                color: #fff;
-                border-radius: 8px;
-              "
-              >Все отзывы</a
-            >
+            <a href="#" class="btn btn-secondary">Все отзывы</a>
           </div>
         </div>
       </div>
