@@ -17,7 +17,10 @@ body {
   padding: 0;
   background-color: #ffffff;
   color: var(--text-dark);
-  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+html {
+  overflow-x: hidden;
 }
 
 .container {
@@ -337,7 +340,6 @@ a {
   }
 }
 
-/* ===== ВАЖНЫЕ ДАТЫ ===== */
 .dates-container {
   display: flex;
   flex-direction: column;
@@ -384,7 +386,6 @@ a {
   line-height: 140%;
 }
 
-/* ===== ОРГКОМИТЕТ ===== */
 .committee-container {
   display: flex;
   flex-direction: column;
@@ -548,7 +549,7 @@ a {
   flex-basis: 100%;
 }
 .action-block:hover {
-  background-color: var(--primary-blue);
+  opacity: 0.7;
 }
 .action-block.full-width {
   width: 100%;
@@ -662,7 +663,6 @@ a {
   color: var(--text-muted);
 }
 
-/* Keen Slider overrides */
 .keen-slider {
   display: flex;
   overflow: hidden;
@@ -850,18 +850,19 @@ a {
 .contacts-wrapper {
   margin-top: 100px;
 }
+.contacts-info-area .section-title {
+  text-align: center;
+}
 .contacts-info-area {
   background-color: var(--light-blue);
-  padding: 48px 0;
+  padding-top: 48px;
+  border-radius: 16px 16px 0 0;
 }
 .contacts-header-row {
-  padding-bottom: 24px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-  margin-bottom: 48px;
 }
-.contacts-grid-layout {
+.contacts-layout {
   display: flex;
-  gap: 24px;
+  gap: 0px;
 }
 .contact-card {
   flex: 1;
@@ -871,25 +872,43 @@ a {
   padding: 48px;
 }
 .contact-card h3 {
-  margin-top: 0;
+  font-weight: 600;
   font-size: 24px;
-  margin-bottom: 32px;
+  line-height: 140%;
   color: var(--text-dark);
+  margin-bottom: 22px;
+}
+.contacts-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .contact-card h4 {
+  font-weight: 600;
   font-size: 18px;
-  margin-top: 0;
-  margin-bottom: 24px;
+  line-height: 140%;
   color: var(--text-dark);
 }
 .contact-detail {
   display: flex;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 8px;
   align-items: flex-start;
 }
 .contact-detail img {
   margin-top: 4px;
+}
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.contact-link {
+  transition: color 0.3s;
+}
+#section-map iframe {
+}
+.contact-link:hover {
+  color: var(--primary-blue);
 }
 .contact-detail p {
   margin: 0;
@@ -909,12 +928,14 @@ a {
   object-fit: cover;
 }
 
-.main-footer {
+.footer {
   background-color: var(--bg-gray);
   padding: 48px 0;
 }
 .footer-layout {
+  gap: 8px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -944,6 +965,21 @@ a {
 .offcanvas-menu {
   display: none;
 }
+#map {
+  width: 100%;
+  height: 365px;
+}
+.footer-link:hover {
+  color: var(--primary-blue);
+}
+.footer-link {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  color: var(--accent-blue);
+  transition: color 0.3s;
+}
 @media (max-width: 1400px) {
   .review-visuals {
     min-height: 278px;
@@ -965,8 +1001,26 @@ a {
   }
 }
 @media (max-width: 1024px) {
+  .footer-link {
+    order: 0;
+  }
+  .footer-copy {
+    order: 1;
+  }
+  .footer {
+    padding: 24px 0;
+  }
+  .footer-layout {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .contact-card {
+    padding: 32px 24px;
+  }
   .reviews-bg {
     padding: 48px 24px;
+    margin: 0 -24px;
   }
   .reviews-title {
     font-size: 32px;
@@ -1054,7 +1108,6 @@ a {
     justify-content: space-between;
   }
 
-  /* Hamburger */
   .hamburger-btn {
     display: flex;
     flex-direction: column;
@@ -1073,14 +1126,12 @@ a {
     transition: all 0.3s ease;
   }
 
-  /* Mobile header actions */
   .mobile-header-actions {
     display: flex;
     align-items: center;
     gap: 16px;
   }
 
-  /* ===== HAMBURGER → CROSS ANIMATION ===== */
   .hamburger-btn {
     display: flex;
     flex-direction: column;
@@ -1105,7 +1156,6 @@ a {
     transform-origin: center;
   }
 
-  /* Бургер → крестик */
   .hamburger-btn.active .hamburger-line:nth-child(1) {
     transform: translateY(5px) rotate(45deg);
   }
@@ -1128,8 +1178,6 @@ a {
     gap: 16px;
   }
 
-  /* ===== OFFCANVAS (выезжает из-под header) ===== */
-
   .offcanvas-menu {
     display: block;
     position: absolute;
@@ -1148,7 +1196,6 @@ a {
     transform: translateY(0);
   }
 
-  /* Body */
   .offcanvas-body {
     padding: 20px;
   }
@@ -1204,8 +1251,6 @@ a {
     color: #0d2240;
   }
 
-  /* Submenu toggle row */
-  /* По умолчанию показываем минус, скрываем плюс */
   .icon-minus {
     display: block;
   }
@@ -1214,7 +1259,6 @@ a {
     display: none;
   }
 
-  /* Когда подменю закрыто — показываем плюс */
   .submenu-toggle.collapsed .icon-minus {
     display: none;
   }
@@ -1230,7 +1274,6 @@ a {
       transform 0.3s ease;
   }
 
-  /* По умолчанию показываем минус, скрываем плюс */
   .icon-minus {
     display: block;
   }
@@ -1259,7 +1302,6 @@ a {
     line-height: 1;
   }
 
-  /* Submenu — используем display вместо max-height */
   .offcanvas-submenu {
     list-style: none;
     padding: 0 0 24px 24px;
@@ -1286,6 +1328,9 @@ a {
 }
 
 @media (max-width: 770px) {
+  #map {
+    height: 238px;
+  }
   .organizer-box {
     flex-direction: column;
   }
@@ -1331,12 +1376,25 @@ a {
   }
 }
 @media (max-width: 576px) {
+  .footer-copy,
+  .footer-link {
+    font-size: 12px;
+  }
+  .contacts-info-area {
+    padding-top: 24px;
+  }
+  .contact-card {
+    flex-basis: 100%;
+  }
+  .contacts-layout {
+    flex-wrap: wrap;
+  }
   .review-panel {
     border-radius: 16px;
   }
   .reviews-bg {
     padding: 48px 16px;
-    margin: 0 -16px;
+    border-radius: 16px;
   }
   .slider-nav-bottom {
     justify-content: space-between;
@@ -1373,6 +1431,12 @@ a {
   }
 }
 @media (max-width: 475px) {
+  .contact-card {
+    padding: 24px 16px;
+  }
+  .reviews-bg {
+    margin: 0 -16px;
+  }
   .review-panel {
     padding: 48px 16px;
   }

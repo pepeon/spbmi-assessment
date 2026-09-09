@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const hamburgerBtn = document.getElementById("hamburgerBtn");
   const offcanvasMenu = document.getElementById("offcanvasMenu");
-  const offcanvasOverlay = document.getElementById("offcanvasOverlay");
   const mobileHeader = document.querySelector(".mobile-header");
   const sliderElement = document.getElementById("organizerSlider");
   const prevBtn = document.getElementById("sliderPrev");
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburgerBtn.classList.toggle("active", isOpen);
     offcanvasMenu.classList.toggle("open", isOpen);
     mobileHeader.classList.toggle("open", isOpen);
-    offcanvasOverlay.classList.toggle("open", isOpen);
     document.body.style.overflow = isOpen ? "hidden" : "";
   }
 
@@ -28,13 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
     isOpen = false;
     hamburgerBtn.classList.remove("active");
     offcanvasMenu.classList.remove("open");
-    offcanvasOverlay.classList.remove("open");
     mobileHeader.classList.remove("open");
     document.body.style.overflow = "";
   }
 
   hamburgerBtn.addEventListener("click", toggleMenu);
-  offcanvasOverlay.addEventListener("click", closeMenu);
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeMenu();
@@ -49,16 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       this.classList.toggle("collapsed", isOpen);
 
-      // Переключаем подменю
       submenu.classList.toggle("open", !isOpen);
     });
   });
 
-  // Закрытие при клике по ссылке
   document.querySelectorAll(".offcanvas-link").forEach(function (link) {
     link.addEventListener("click", closeMenu);
   });
-  // ===== ТАБЫ =====
   const tabItems = document.querySelectorAll(".tab-item");
   const tabPanes = document.querySelectorAll(".tab-pane");
 
@@ -66,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
     tab.addEventListener("click", function () {
       const targetTab = this.getAttribute("data-tab");
 
-      // Убираем active со всех табов и контента
       tabItems.forEach(function (t) {
         t.classList.remove("active");
       });
@@ -74,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
         pane.classList.remove("active");
       });
 
-      // Добавляем active текущему табу и контенту
       this.classList.add("active");
       const targetPane = document.getElementById("tab-" + targetTab);
       if (targetPane) {
@@ -83,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ===== АККОРДЕОН (ОРГКОМИТЕТ) =====
   const accordionItems = document.querySelectorAll(".accordion-item");
 
   accordionItems.forEach(function (item) {
@@ -92,12 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
     header.addEventListener("click", function () {
       const isActive = item.classList.contains("active");
 
-      // Закрываем все аккордеоны (опционально, если нужно только один открытый)
-      // accordionItems.forEach(function (i) {
-      //   i.classList.remove('active');
-      // });
-
-      // Переключаем текущий
       item.classList.toggle("active", !isActive);
     });
   });
@@ -109,18 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
     },
 
     created(s) {
-      // Устанавливаем общее количество слайдов
       totalSpan.textContent = s.slides.length;
       updateButtons(s);
     },
     slideChanged(s) {
-      // Обновляем счётчик
       currentSpan.textContent = s.track.details.rel + 1;
       updateButtons(s);
     },
   });
 
-  // Навигация
   prevBtn.addEventListener("click", function () {
     slider.prev();
   });
@@ -129,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
     slider.next();
   });
 
-  // Обновление состояния кнопок
   function updateButtons(s) {
     const idx = s.track.details.rel;
     const maxIdx = s.slides.length - 1;
@@ -154,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   mediaQuery.addEventListener("change", handleScreenChange);
 
-  // Вызываем сразу при загрузке
   handleScreenChange(mediaQuery);
 
   if (reviewsSliderElement) {
@@ -167,23 +146,19 @@ document.addEventListener("DOMContentLoaded", function () {
       created(s) {
         const totalSlides = s.slides.length;
 
-        // Генерируем точки во всех слайдах
         const allSlideDotsContainers =
           document.querySelectorAll(".review-dots");
         allSlideDotsContainers.forEach(function (container) {
           createDots(container, totalSlides);
         });
 
-        // Обновляем активную точку на первом слайде
         updateActiveDots(s.track.details.rel);
       },
       slideChanged(s) {
-        // Обновляем активную точку при смене слайда
         updateActiveDots(s.track.details.rel);
       },
     });
 
-    // Функция создания точек в контейнере
     function createDots(container, totalSlides) {
       container.innerHTML = "";
 
@@ -202,7 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Функция обновления активной точки во всех контейнерах
     function updateActiveDots(activeIndex) {
       const allDots = document.querySelectorAll(".review-dot");
       allDots.forEach(function (dot) {
