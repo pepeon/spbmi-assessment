@@ -133,7 +133,7 @@ a {
   color: #002366;
 }
 .nav-link .arrow {
-  background: url("/images/arrow-drop-down.svg") center no-repeat;
+  background: url("../images/arrow-drop-down.svg") center no-repeat;
   background-size: contain;
   width: 16px;
 }
